@@ -1,6 +1,5 @@
 package com.exam_2017.main;
 
-
 import java.util.Scanner;
 
 import org.junit.Test;
@@ -32,5 +31,28 @@ public class Main {
 			}
 		}
 		System.out.println(min - 2);
+	}
+
+	// 游戏任务标记
+	@Test
+	public void test1() {
+		// 做这个题的时候main函数写错了，Scanner未import
+		Scanner scanner = new Scanner(System.in);
+		int[][] arr = new int[32][32];
+		int num1 = scanner.nextInt() - 1;
+		int num2 = scanner.nextInt() - 1;
+		int row1 = num1 / 32;
+		int column1 = num1 % 32;
+		arr[row1][column1] = 1;
+
+		int row2 = num2 / 32;
+		int column2 = num2 % 32;
+		if (num1 < 0 || num1 > 1023 || num2 < 0 || num2 > 1023) {
+			System.out.println(-1);
+		} else if (arr[row2][column2] == 1) {
+			System.out.println(1);
+		} else {
+			System.out.println(0);
+		}
 	}
 }
